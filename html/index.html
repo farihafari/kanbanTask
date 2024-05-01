@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="/assets/js/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
@@ -18,9 +19,9 @@
             <button class="sort-btn">sort</button>   
            </div>
     </nav>
-    <div class="filter-bar">
+    <!-- <div class="filter-bar">
         
-    </div>
+    </div> -->
     <header>
        
         <h1>kanban board </h1>
@@ -46,12 +47,13 @@
                 </div>
                 <!-- item button -->
                 <div class="btn-group">
-                    <button class="todo-btn">add item</button>
-                    <button class="todo-btn hide">save item</button>
+                    <button class="todo-btn add-item-btn" >add item</button>
+                    <button class="todo-btn hide save-item-btn" id="toDo">save item</button>
                 </div>
                 <!-- add input  -->
                 <div class="add-input">
-                    
+           
+            
                 </div>
             </div>
             <div class="stages">
@@ -66,8 +68,8 @@
                 </div>
                 <!-- item button -->
                 <div class="btn-group">
-                    <button class="backlog-btn">add item</button>
-                    <button class="todo-btn hide">save item</button>
+                    <button class="backlog-btn add-item-btn">add item</button>
+                    <button class="backlog-btn hide save-item-btn" id="backLog">save item</button>
 
                 </div>
                 <!-- add input  -->
@@ -87,13 +89,13 @@
                 </div>
                 <!-- item button -->
                 <div class="btn-group">
-                    <button class="progress-btn">add item</button>
-                    <button class="todo-btn hide">save item</button>
+                    <button class="progress-btn add-item-btn">add item</button>
+                    <button class="progress-btn hide save-item-btn" id="progress">save item</button>
 
                 </div>
                 <!-- add input  -->
                 <div class="add-input">
-
+            
                     
                 </div>
             </div>
@@ -104,13 +106,17 @@
                 <!-- draggable content -->
                 <div class="dragableItem">
                     <ul class="drag-item-list">
-                        <li class="drag-item">cxvndkfj</li>
+                        <li class="drag-item">
+                            <h4 class="text"> <span>name: </span> zdjs</h4>
+                            <p class="text"> <span> description: </span> dbkdjc</p>
+                            <button class="search-bar">delete</button>
+                        </li>
                     </ul>
                 </div>
                 <!-- item button -->
                 <div class="btn-group">
-                    <button class="done-btn">add item</button>
-                    <button class="todo-btn hide">save item</button>
+                    <button class="done-btn add-item-btn">add item</button>
+                    <button class="done-btn hide save-item-btn" id="done">save item</button>
 
                 </div>
                 <!-- add input  -->
@@ -121,7 +127,7 @@
             </div>
         </div>
     </div>
-
+<script src="/assets/js/script.js"></script>
 </body>
 
 </html>

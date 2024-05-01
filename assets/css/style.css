@@ -1,93 +1,111 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-scroll-behavior: smooth;
-color: white;
+    scroll-behavior: smooth;
+    color: white;
 }
-body{
+
+body {
     height: 100vh;
-    background: rgb(1,0,11);
-background: linear-gradient(135deg, rgba(1,0,11,1) 48%, rgba(38,28,39,1) 68%,rgb(111, 101, 19) 91%);
+    background: rgb(1, 0, 11);
+    background: linear-gradient(135deg, rgba(1, 0, 11, 1) 48%, rgba(38, 28, 39, 1) 68%, rgb(111, 101, 19) 91%);
 
 
 }
+
 /* nav */
-nav{
+nav {
     position: fixed;
     width: 100%;
     max-height: 70px;
-    background-color: rgba(0, 0, 0,.6);
+    background-color: rgba(0, 0, 0, .6);
     display: flex;
     justify-content: flex-end;
-
+    z-index: 100;
+    
 }
-.filteration{
+
+.filteration {
     padding: 10px 20px;
 }
-.search-bar,.sort-btn{
+
+.search-bar,
+.sort-btn {
     background-color: #000;
-   padding: 10px 20px;
-    border: 2px solid rgba(118,7,69,.6);
+    padding: 10px 20px;
+    border: 2px solid rgba(118, 7, 69, .6);
     border-radius: 5px;
-    box-shadow: 8px 8px 19px 2px rgba(118,7,69,.6);
+    box-shadow: 8px 8px 19px 2px rgba(118, 7, 69, .6);
     margin: 5px 10px;
     text-transform: capitalize;
 
 }
+
 /* filter bar */
-.filter-bar{
-    width: 50%;
+.filter-bar {
+    width: 40%;
     height: 100px;
     background-color: #fff;
+    position: absolute;
+    right: 0px;
+    top: 70px;
+
 }
+
 /* title */
-header{
+header {
     position: relative;
     top: 70px;
 }
-header>h1{
+
+header>h1 {
     text-align: center;
     text-transform: capitalize;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 45px;
     padding: 20px;
 }
-header>p{
+
+header>p {
     text-align: center;
     font-size: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 600;
     letter-spacing: 3px;
 }
+
 /* main div */
-.main-container{
+.main-container {
     margin: 20px;
 }
+
 /* card row */
-.row{
+.row {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-width: 90%;
-height: 400px;
-margin: 20px auto;
-/* background-color: aqua; */
+    width: 90%;
+    height: 400px;
+    margin: 20px auto;
+    /* background-color: aqua; */
 }
+
 /* card col */
-.stages{
+.stages {
     width: 23%;
     /* flex: 1; */
     margin: 0 10px;
     /* height: 60%; */
 
-    background-color: rgba(0, 0, 0,.6);
+    background-color: rgba(0, 0, 0, .6);
     border-radius: 10px;
-    border: 1px solid rgba(118,7,69,.6);
-    box-shadow: 8px 8px 19px 2px rgba(118,7,69,.6);
+    border: 1px solid rgba(118, 7, 69, .6);
+    box-shadow: 8px 8px 19px 2px rgba(118, 7, 69, .6);
 }
+
 /* card */
-.card{
+.card {
     margin: 10px auto;
     width: 90%;
     height: 40%;
@@ -95,7 +113,7 @@ margin: 20px auto;
     /* background-color: brown; */
 }
 
-.card>h3{
+.card>h3 {
     text-transform: capitalize;
     font-family: 'Segoe UI';
     text-align: center;
@@ -103,40 +121,51 @@ margin: 20px auto;
     line-height: 5.6rem;
     text-shadow: 4px 4px 7px rgb(10, 9, 9);
 }
+
 /* todo */
-.toDo,.todo-btn{
-    background: rgb(153,73,8);
-    background: radial-gradient(circle, rgba(153,73,8,0.9668679971988795) 38%, rgba(95,4,15,1) 80%);
+.toDo,
+.todo-btn {
+    background: rgb(153, 73, 8);
+    background: radial-gradient(circle, rgba(153, 73, 8, 0.9668679971988795) 38%, rgba(95, 4, 15, 1) 80%);
 
 }
+
 /* backLog */
-.backLog,.backlog-btn{
-    background: rgb(63,94,251);
-background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+.backLog,
+.backlog-btn {
+    background: rgb(63, 94, 251);
+    background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
 }
+
 /*inProgess  */
-.inProgess,.progress-btn{
-    background: rgb(219,169,121);
-background: radial-gradient(circle, rgba(219,169,121,1) 38%, rgba(95,53,4,1) 80%);
+.inProgess,
+.progress-btn {
+    background: rgb(219, 169, 121);
+    background: radial-gradient(circle, rgba(219, 169, 121, 1) 38%, rgba(95, 53, 4, 1) 80%);
 }
+
 /* Done */
-.Done,.done-btn{
-    background: rgb(175,209,152);
-background: radial-gradient(circle, rgba(175,209,152,1) 38%, rgba(17,66,50,1) 80%);
+.Done,
+.done-btn {
+    background: rgb(175, 209, 152);
+    background: radial-gradient(circle, rgba(175, 209, 152, 1) 38%, rgba(17, 66, 50, 1) 80%);
 }
+
 /* draggable content */
-.dragableItem{
+.dragableItem {
     height: auto;
     /* max-height: 75vh; */
 }
+
 /* ul */
 .drag-item-list {
     list-style: none;
     min-height: 50px;
-   
-  }
+
+}
+
 /* li */
-  .drag-item {
+.drag-item {
     margin: 10px;
     padding: 10px;
     height: fit-content;
@@ -144,76 +173,107 @@ background: radial-gradient(circle, rgba(175,209,152,1) 38%, rgba(17,66,50,1) 80
     border-radius: 10px;
     line-height: 1.5rem;
     letter-spacing: 1px;
+    color: black;
     cursor: pointer;
-  }
-  
-  .drag-item:focus {
+}
+.span{
+text-transform: capitalize;
+font-family: 'Segoe UI';
+color: #000;
+}
+.text{
+    font-family: 'Segoe UI';
+    color: #000;
+}
+.drag-item:focus {
     outline: none;
     background-color: white;
     color: black;
-  }
-  /* item add btn */
-  .btn-group{
+}
+
+/* item add btn */
+.btn-group {
     padding: 20px;
     width: 100%;
-    
-  }
-  .btn-group>button{
-    padding:13px 25px;
+
+}
+
+.btn-group>button {
+    padding: 13px 25px;
     border-radius: 8px;
- font-family: 'Segoe UI';
- font-size: 16px;
- text-transform: capitalize;
- font-weight: 500;
- text-shadow: 4px 4px 7px rgb(10, 9, 9);
+    font-family: 'Segoe UI';
+    font-size: 16px;
+    text-transform: capitalize;
+    font-weight: 500;
+    text-shadow: 4px 4px 7px rgb(10, 9, 9);
 
-   
-  }
-.todo-btn{
-    border: 2px solid rgb(153,73,8);
-    box-shadow: 3px 3px 4px 0px rgba(153,73,8,.6);
 
 }
-.backlog-btn{
-    border: 2px solid rgb(63,94,251);
-    box-shadow: 3px 3px 4px 0px rgba(63,94,251,.6);
+
+.todo-btn {
+    border: 2px solid rgb(153, 73, 8);
+    box-shadow: 3px 3px 4px 0px rgba(153, 73, 8, .6);
 
 }
-.progress-btn{
-    border: 2px solid rgb(219,169,121);
-    box-shadow: 3px 3px 4px 0px rgba(219,169,121,.5);
+
+.backlog-btn {
+    border: 2px solid rgb(63, 94, 251);
+    box-shadow: 3px 3px 4px 0px rgba(63, 94, 251, .6);
 
 }
-.done-btn{
-    border: 2px solid rgb(175,209,152);
-    box-shadow: 3px 3px 4px 0px rgba(175,209,152,.5);
+
+.progress-btn {
+    border: 2px solid rgb(219, 169, 121);
+    box-shadow: 3px 3px 4px 0px rgba(219, 169, 121, .5);
 
 }
-.hide{
+
+.done-btn {
+    border: 2px solid rgb(175, 209, 152);
+    box-shadow: 3px 3px 4px 0px rgba(175, 209, 152, .5);
+
+}
+
+.hide {
     display: none;
 }
+
 /* add input */
-.add-input{
+.add-input {
     margin: 10px;
-  padding: 5px 10px;
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.9);
-  min-height: 100px;
-  display: none;
-}
-.add-item {
-    width: 100%;
-    min-height: 100px;
-   
-    height: auto;
-    background-color: white;
+    padding: 5px 10px;
     border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    min-height: 100px;
+    display: none;
+}
+/* label */
+.input-label{
+color: black;
+text-transform: capitalize;
+font-family: 'Segoe UI';
+font-size: 13px;
+}
+/* input class add */
+.add-title {
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
     margin: 5px auto;
     border: none;
-    color: black;
+    color: black !important;
     padding: 10px;
+}
+.description {
+    width: 100%; /* Adjust width as needed */
+    height: 100px; /* Adjust height as needed */
+    padding: 10px;
+    border: 1px solid #ccc;
+    resize: vertical; /* Enable vertical resizing for scrollbar */
+    overflow-y: auto; /* Enable vertical scrollbar */
+    white-space: pre-wrap; /* Wrap text according to input width */
+    color: black;
   }
-  .add-item:focus {
+.add-title:focus,.description:focus {
     outline: none;
-  }
-  
+}
