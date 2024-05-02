@@ -1,23 +1,5 @@
 $(document).ready(function () {
-    // function removeData(title) {
-    //     let remData = JSON.parse(localStorage.getItem("cardData"));
-
-    //     for (let key in remData) {
-    //         if (remData.hasOwnProperty(key)) {
-    //             let cards = remData[key];
-    //             for (let i = 0; i < cards.length; i++) {
-    //                 if (cards[i].title === title) {
-    //                     cards.splice(i, 1);
-    //                     localStorage.setItem("cardData", JSON.stringify(remData));
-
-    //                     // Reload the page to reflect the changes
-    //                     location.reload();
-    //                     return; // Exit the function once the card is removed
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
+   
     // target add-item-btn
     $(".add-item-btn").on("click", function () {
         //  show save btn
@@ -240,6 +222,12 @@ $(document).ready(function () {
         }
         removeData(cardData);
     });
+
+  
+    // $("#sort").click(function(){
+    //    let h3Data= $(".card").children("h3").text();
+    //    console.log(h3Data);
+    // })
     updatedOnLoad();
 
 })
