@@ -7,9 +7,14 @@ use Illuminate\Http\Request;
 
 class categoryController extends Controller
 {
+
     // add categories
     function addCategories(Request $request){
         $object = new Category();
+        // validation
+        $request->validate([
+            "cName"=>"required",
+            "cFile"=>"required|image:jpg,png,jpeg|max:3000"]);
         $categoryImage=time().".".$request->cFile->extension();
         $request->cFile->move(public_path("assets/categories"),$categoryImage);
         $object->catName=$request->cName;
