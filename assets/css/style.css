@@ -30,7 +30,7 @@ nav {
     padding: 10px 20px;
 }
 
-.search-bar,
+.search-bar,.delete,
 .sort-btn {
     background-color: #000;
     padding: 10px 20px;
@@ -276,4 +276,8 @@ font-size: 13px;
   }
 .add-title:focus,.description:focus {
     outline: none;
+}
+
+button{
+    cursor: pointer;
 }

@@ -1,4 +1,23 @@
 $(document).ready(function () {
+    // function removeData(title) {
+    //     let remData = JSON.parse(localStorage.getItem("cardData"));
+
+    //     for (let key in remData) {
+    //         if (remData.hasOwnProperty(key)) {
+    //             let cards = remData[key];
+    //             for (let i = 0; i < cards.length; i++) {
+    //                 if (cards[i].title === title) {
+    //                     cards.splice(i, 1);
+    //                     localStorage.setItem("cardData", JSON.stringify(remData));
+
+    //                     // Reload the page to reflect the changes
+    //                     location.reload();
+    //                     return; // Exit the function once the card is removed
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
     // target add-item-btn
     $(".add-item-btn").on("click", function () {
         //  show save btn
@@ -130,7 +149,7 @@ $(document).ready(function () {
         $(this).siblings(".add-item-btn").show();
         // updatedonload callback
         updatedOnLoad();
-        // window.location.reload(); // Reload the current page       
+        window.location.reload(); // Reload the current page       
     })
     function updatedOnLoad() {
         // get data from local storage
@@ -141,11 +160,12 @@ $(document).ready(function () {
 
             // Check if the card ID exists in localStorageData
             if (localStorageData.hasOwnProperty(cardId)) {
-                localStorageData[cardId].forEach(card => {
+                localStorageData[cardId].forEach((card, index) => {
+                    // console.log(index)
                     // create list item elements and populate them with card data
                     let listItems = document.createElement("li");
                     listItems.classList.add("drag-item");
-
+                    listItems.setAttribute("id", card.title);
                     let titleSpan = document.createElement("span");
                     titleSpan.classList.add("span");
                     titleSpan.appendChild(document.createTextNode("title"));
@@ -163,16 +183,18 @@ $(document).ready(function () {
                     p.appendChild(document.createTextNode(card.description));
                     //  create removal button 
                     let btn = document.createElement("button");
-                    btn.classList.add("search-bar");
+                    btn.classList.add("delete");
                     let btnText = document.createTextNode("delete");
                     btn.appendChild(btnText);
 
+                    // Store card data in dataset
+                    btn.dataset.cardData = JSON.stringify(card); //custome dataset attribute to get the collection
                     listItems.appendChild(titleSpan);
                     listItems.appendChild(h4);
                     listItems.appendChild(descriptionSpan);
                     listItems.appendChild(p);
                     listItems.appendChild(btn);
-                    // Append the created list item to the appropriate column
+                    // Append the created list item in ul
                     let getUl = $(this).parent().siblings(".dragableItem").children(".drag-item-list");
                     getUl.append(listItems);
                 });
@@ -181,7 +203,43 @@ $(document).ready(function () {
     }
     // remove item
 
+    function removeData(cardId) {
+        let storedData = JSON.parse(localStorage.getItem("cardData"));
 
+        //   console.log(cardId)
+        for (let catKeys in storedData) {
+            // console.log(catKeys)
+            for (let i = 0; i < storedData[catKeys].length; i++) {
+                if (storedData[catKeys][i].title === cardId) {
+                    console.log(i)
+                    storedData[catKeys].splice(i, 1);
+                    localStorage.setItem("cardData", JSON.stringify(storedData));
+                //    for reload
+                    window.location.reload();
+
+                    break; // Exit the loop once the card is found and removed
+                }
+            }
+        }
+
+    }
+
+
+
+    // Attach event listener to dynamically created buttons using event delegation
+    $(document).on("click", ".delete", function (event) {
+        let cardDataString = $(this).data("cardData");
+        // console.log(cardDataString)
+        let cardData;
+        try {
+            cardData = cardDataString.title;
+            // console.log(cardData)
+        } catch (error) {
+            console.error("Error parsing card data:", error);
+            return; // Exit the function if there's an error parsing the JSON
+        }
+        removeData(cardData);
+    });
     updatedOnLoad();
 
 })
